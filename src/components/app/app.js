@@ -8,6 +8,7 @@ import ItemAddForm from '../item-add-form';
 import './app.css';
 
 export default class App extends Component {
+    index=100;
     state = {
         todoData: [
             { label: 'Drink Coffee1', important: false, id: 1 },
@@ -25,8 +26,9 @@ export default class App extends Component {
         });
     };
     AddItem = (text) =>{
-        console.log(text);
-
+      this.setState ({
+        todoData: [...this.state.todoData,{ label: text, important: false, id: this.index++ }]
+      })
     }
     render() {
         return (
