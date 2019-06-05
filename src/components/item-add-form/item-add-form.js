@@ -11,14 +11,15 @@ export default class ItemAddForm extends Component {
     }
     render() {
         return (
-            <div>
-                <input id='myInput'
+            <div className="form-inline">
+                <input className="form-control" id='myInput'
                     placeholder={'Add new Item'}
 
                     onChange={(e)=>this.putStringInState(e)}
 
                 />
-                <button
+                <button type='button'
+                    className="btn btn-outline-secondary"
                     onClick={()=>this.props.AddItem(this.state.text)}
                 >ADD</button>
             </div>
